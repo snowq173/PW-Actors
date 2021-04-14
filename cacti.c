@@ -211,7 +211,7 @@ static void append_to_queue(actor_id_t target_id) {
 	pool->work_queue_count++;
 }
 
-actor_id_t queue_pop() {
+static actor_id_t queue_pop() {
 	actor_id_t current = pool->work_queue[pool->work_queue_iter];
 	
 	pool->work_queue_iter = (pool->work_queue_iter + 1) % (pool->work_queue_size);
